@@ -36,13 +36,20 @@ Route::prefix('admin')
     ->middleware(['auth', 'admin'])->group(function () {
         Route::get('/', DashboardController::class . '@index')->name('admin.home');
         Route::resource('calon', CalonController::class);
-        // Route::get('calon/{id}/edit', [AdminController::class, '@editCalon'])->name('calon.edit');
-        Route::get('/calon/{id}/edit', 'AdminController@editCalon')->name('calon.edit');
+        // Route::get('calon/{id}/edit', [CalonController::class, '@edit'])->name('calon.edit');
+        // Route::get('/calon/{id}/edit', [AdminController::class, 'editCalon'])->name('calon.edit');
+        // Route::get('calon', [CalonController::class, 'index'])->name('calon.index');
+        // Route::post('calon', [AdminController::class, 'deleteCalon'])->name('calon.destroy');
+        // Route::post('calon', [CalonController::class, 'create'])->name('calon.create');
+        // Route::post('calon/{id}/delete', [AdminController::class, '@deleteCalon'])->name('admin.deleteCalon');
+        // Route::get('calon/{id}/edit', [CalonController::class, 'edit'])->name('calon.edit');
 
-
+        Route::put('/updateCalon/{id}', [AdminController::class, 'updateCalon'])->name('admin.updateCalon');
 
 
         Route::post('/tambahCalon', AdminController::class . '@addCalon')->name('admin.addCalon');
+        Route::put('/tambahCalon/{id}', [AdminController::class, 'updateCalon'])->name('admin.updateCalon');
+
         Route::get('/totalSuara', ApiVotingController::class . '@getSuara')->name('api.totalSuara');
         Route::get('/pemilihTerkini', ApiVotingController::class . '@getPemilihTerkini')->name('api.pemilihTerkini');
         Route::get('/sudahMemilih', ApiVotingController::class . '@getSudahMemilih')->name('api.sudahMemilih');

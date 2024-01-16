@@ -4,11 +4,11 @@
     <section id="basic-vertical-layouts">
         <div class="card">
             <div class="card-header">
-                <h4 class="card-title">Masukan Data Kandidat</h4>
+                <h4 class="card-title">Edit Data Kandidat</h4>
             </div>
             <div class="card-content">
                 <div class="card-body">
-                    <form class="form form-vertical" method="POST" action="{{ route('admin.addCalon') }}"
+                    <form class="form form-vertical" method="POST" action="{{ route('admin.updateCalon', ['id' => $calon->id]) }}"
                         enctype="multipart/form-data">
                         @csrf
                         @method('put')
@@ -18,17 +18,19 @@
                                     <div class="form-group">
                                         <label for="nama-ketua">Nama Ketua</label>
                                         <input type="text" id="nama-ketua" class="form-control" name="nama_ketua"
-                                            placeholder="Nama Ketua" required>
+                                        value="{{ $calon->nama_ketua }}" required>
+
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="form-group">
                                         <label for="nama-wakil">Nama Wakil</label>
                                         <input type="text" id="nama-wakil" class="form-control" name="nama_wakil"
-                                            placeholder="Nama Wakil" required>
+                                        value="{{ $calon->nama_wakil }}" required>
+
                                     </div>
                                 </div>
-                                <div class="col-12">
+                                {{-- <div class="col-12">
                                     <div class="form-group">
                                         <label for="foto-calon">Foto Calon</label>
                                         <input class="form-control" type="file" id="formFile" name="foto_calon"
@@ -38,20 +40,51 @@
                                             <p class="text-danger">*format gambar harus jpg!</p>
                                         @enderror
                                     </div>
+                                </div> --}}
+
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label for="foto-calon">Foto Calon</label>
+
+                                        <!-- Display the current image if it exists -->
+                                        @if($calon->foto_calon)
+                                            <div class="mb-2">
+                                                <img src="{{ asset('foto_calon/' . $calon->foto_calon) }}" alt="Current Image" width="100">
+                                                <p class="text-danger">*foto calon wajib diupload ulang jika tidak ada perubahan</p>
+                                            </div>
+                                        @endif
+
+                                        <!-- Input for uploading a new image -->
+                                        <input class="form-control" type="file" id="formFile" name="foto_calon" accept="image/jpeg, image/jpg" @error('foto_calon') is-invalid @enderror>
+
+                                        @error('foto_calon')
+                                            <p class="text-danger">*format gambar harus jpg!</p>
+                                        @enderror
+                                    </div>
                                 </div>
+
+
+
                                 <div class="col-12">
                                     <div class="form-group">
                                         <label for="visi">Visi</label>
-                                        <textarea class="form-control" id="visi" rows="3" name="visi"></textarea>
+                                        <textarea class="form-control" id="visi" rows="3" name="visi" required>{{ $calon->visi }}</textarea>
+                                        @error('visi')
+                                            <p class="text-danger">{{ $message }}</p>
+                                        @enderror
                                     </div>
                                 </div>
+
                                 <div class="col-12">
                                     <div class="form-group">
                                         <label for="misi">Misi</label>
-                                        <textarea class="form-control" id="misi" rows="3" name="misi" required></textarea>
+                                        <textarea class="form-control" id="misi" rows="3" name="misi" required>{{ $calon->misi }}</textarea>
+                                        @error('misi')
+                                            <p class="text-danger">{{ $message }}</p>
+                                        @enderror
                                     </div>
                                 </div>
-                                <div class="col-12">
+
                                     <div class="col-12 d-flex justify-content-end">
                                         <button type="submit" class="btn btn-primary me-1 mb-1">Submit</button>
                                         <button type="reset" class="btn btn-light-secondary me-1 mb-1"

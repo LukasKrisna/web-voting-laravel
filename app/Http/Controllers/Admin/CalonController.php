@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Calons;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class CalonController extends Controller
 {
@@ -63,16 +64,17 @@ class CalonController extends Controller
      */
     public function edit($id)
     {
+        // $calon = Calons::where('id', $id)->get();
+        $calon = Calons::where('id', $id)->first();
+
+        if (!$calon) {
+            return redirect()->back()->with('error', 'Kandidat tidak ditemukan.');
+        }
+        // dd('Reached editCalon method');
+        // dd($id);
         // $calon = Calons::find($id);
-
-        // if (!$calon) {
-        //     abort(404); // Or handle the case when the calon is not found
-        // }
-
-        // return view('admin.pages.calon.edit', [
-        //     'calon' => $calon,
-        //     'active' => 'calon'
-        // ]);
+        // dd($calon);
+        return view('admin.pages.calon.edit', compact('calon'));
     }
 
     /**
@@ -84,7 +86,6 @@ class CalonController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
     }
 
     /**
@@ -95,6 +96,13 @@ class CalonController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $table = Calons::where('id', $id)->delete();
+
+        $image_path = 'foto_calon/' . $id . '.jpg';
+        if (File::exists($image_path)) {
+            File::delete($image_path);
+        }
+
+        return redirect()->back()->with('deleted', 'Kandidat Berhasil Dihapus');
     }
 }

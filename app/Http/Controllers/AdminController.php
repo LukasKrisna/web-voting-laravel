@@ -113,8 +113,7 @@ class AdminController extends Controller
         // dd($id);
         // $calon = Calons::find($id);
         // dd($calon);
-
-        return view('admin.calon.edit', compact('calon'));
+        return view('admin.pages.calon.edit', compact('calon'));
     }
 
     public function updateCalon(Request $request, $id)
@@ -133,7 +132,7 @@ class AdminController extends Controller
             'misi' => $request->misi,
         ]);
 
-        return redirect()->route('admin.calon')->with('success', 'Kandidat Berhasil Diubah');
+        return redirect()->route('calon.index')->with('success', 'Kandidat Berhasil Diubah');
     }
 
     public function dataPemilih()
