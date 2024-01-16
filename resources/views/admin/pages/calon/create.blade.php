@@ -30,7 +30,7 @@
                                 <div class="col-12">
                                     <div class="form-group">
                                         <label for="foto-calon">Foto Calon</label>
-                                        <input class="form-control" type="file" id="formFile" name="foto_calon"
+                                        <input class="form-control" type="file" accept="image/jpeg, image/jpg" id="formFile" name="foto_calon"
                                             @error('password') is-invalid @enderror required>
 
                                         @error('foto_calon')

@@ -37,6 +37,8 @@ Route::prefix('admin')
         Route::get('/', DashboardController::class . '@index')->name('admin.home');
         Route::resource('calon', CalonController::class);
         // Route::get('calon/{id}/edit', [AdminController::class, '@editCalon'])->name('calon.edit');
+        Route::get('/calon/{id}/edit', 'AdminController@editCalon')->name('calon.edit');
+
 
 
 

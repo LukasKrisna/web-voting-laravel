@@ -53,4 +53,8 @@ class User extends Authenticatable
     {
         return $this->hasOne(Kelas::class, 'id', 'kelas_id');
     }
+    public function hasRole($role)
+    {
+        return $this->attributes['role'] === $role;
+    }
 }
