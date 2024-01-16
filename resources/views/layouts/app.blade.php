@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title> E-KPKO</title>
+    <title>E-OMKVote</title>
 
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
@@ -37,7 +37,7 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm" style="z-index: 99">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    E-KPKO
+                    E-OMKVote
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"

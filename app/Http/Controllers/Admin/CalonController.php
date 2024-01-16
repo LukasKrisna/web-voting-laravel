@@ -63,7 +63,16 @@ class CalonController extends Controller
      */
     public function edit($id)
     {
-        //
+        // $calon = Calons::find($id);
+
+        // if (!$calon) {
+        //     abort(404); // Or handle the case when the calon is not found
+        // }
+
+        // return view('admin.pages.calon.edit', [
+        //     'calon' => $calon,
+        //     'active' => 'calon'
+        // ]);
     }
 
     /**

@@ -36,6 +36,8 @@ Route::prefix('admin')
     ->middleware(['auth', 'admin'])->group(function () {
         Route::get('/', DashboardController::class . '@index')->name('admin.home');
         Route::resource('calon', CalonController::class);
+        // Route::get('calon/{id}/edit', [AdminController::class, '@editCalon'])->name('calon.edit');
+
 
 
         Route::post('/tambahCalon', AdminController::class . '@addCalon')->name('admin.addCalon');

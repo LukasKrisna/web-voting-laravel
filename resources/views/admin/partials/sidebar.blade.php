@@ -3,7 +3,7 @@
         <div class="sidebar-header position-relative">
             <div class="d-flex justify-content-between align-items-center">
 
-                <h5 class="mt-auto mb-auto">Voting-Osis</h5>
+                <h5 class="mt-auto mb-auto">Voting-OMK</h5>
 
                 <div class="theme-toggle d-flex gap-2  align-items-center ">
                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true"

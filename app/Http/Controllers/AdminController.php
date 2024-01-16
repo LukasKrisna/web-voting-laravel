@@ -109,7 +109,7 @@ class AdminController extends Controller
     public function editCalon($id)
     {
         $calon = Calons::where('id', $id)->get();
-        return view('admin.editcalon', compact('calon'));
+        return view('admin.calonedit', compact('calon'));
     }
 
     public function updateCalon(Request $request, $id)
