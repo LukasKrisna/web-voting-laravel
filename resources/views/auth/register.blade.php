@@ -95,7 +95,7 @@
                                         @enderror
                                     </div>
                                 </div>
-                                <div class="col-12">
+                                {{-- <div class="col-12">
                                     <div class="form-group">
                                         <label for="foto-calon">{{ __('Kelas') }}</label>
                                         <select class="form-select" name="kelas_id">
@@ -110,7 +110,7 @@
                                             </span>
                                         @enderror
                                     </div>
-                                </div>
+                                </div> --}}
                                 <div class="col-12">
                                     <div class="form-group">
                                         <label for="visi">{{ __('Password') }}</label>

@@ -26,7 +26,7 @@
                             <tr>
                                 <th>Nama</th>
                                 <th>Nis</th>
-                                <th>Kelas</th>
+                                {{-- <th>Kelas</th> --}}
                                 <th>Voting</th>
                                 <td>Memvoting</td>
                                 <th>Role</th>
@@ -38,7 +38,7 @@
                                 <tr>
                                     <td>{{ $p->nama }}</td>
                                     <td>{{ $p->nis }}</td>
-                                    <td>{{ $p->kelas->kelas }}</td>
+                                    {{-- <td>{{ $p->kelas->kelas }}</td> --}}
                                     <td>
                                         @if ($p->voting == 1)
                                             <span class="badge bg-success">Sudah Voting</span>

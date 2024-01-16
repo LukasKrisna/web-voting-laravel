@@ -16,13 +16,13 @@ class UserSeeder extends Seeder
     public function run()
     {
         User::create([
-            'nama' => 'Tes',
-            'nis' => '12345678',
+            'nama' => 'Lukas Krisna',
+            'nis' => 'admin123',
             'kelas_id' => 27,
             'voting' => false,
             'voting_id' => null,
             'role' => 'admin',
-            'password' => bcrypt('12345678'),
+            'password' => bcrypt('admin123'),
         ]);
     }
 }

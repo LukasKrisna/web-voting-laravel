@@ -14,9 +14,9 @@
                     @csrf
 
                     <div class="form-group position-relative has-icon-left mb-4">
-                        <input id="nis" type="number"
+                        <input id="nis" type="text"
                             class="form-control form-control-xl @error('nis') is-invalid @enderror" name="nis"
-                            value="{{ old('nis') }}" required autocomplete="nis" autofocus placeholder="Nis">
+                            value="{{ old('nis') }}" required autocomplete="nis" autofocus placeholder="Username">
                         @error('nis')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>

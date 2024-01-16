@@ -9,6 +9,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Api\VotingController as ApiVotingController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\VotingController;
+use App\Http\Controllers\SessionCheckController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,7 +22,7 @@ use App\Http\Controllers\VotingController;
 |
 */
 
-
+Route::get('/check-session', [SessionCheckController::class, 'checkSession'])->name('check.session');
 
 Auth::routes();
 
