@@ -83,7 +83,7 @@
                                 </div>
                                 <div class="col-12">
                                     <div class="form-group">
-                                        <label for="nama-wakil">{{ __('Nis') }}</label>
+                                        <label for="nama-wakil">{{ __('Username') }}</label>
                                         <input id="nis" type="text"
                                             class="form-control @error('nis') is-invalid @enderror" name="nis"
                                             value="{{ old('nis') }}" required autocomplete="nis">
