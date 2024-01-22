@@ -7,7 +7,7 @@
         <div class="col-lg-5 col-12">
             <div id="auth-left">
 
-                <h1 class="auth-title">Log in.</h1>
+                <h1 class="auth-title">E-Vote OMK</h1>
                 <p class="auth-subtitle mb-5">Log in menggunakan data yang diberikan panitia.</p>
 
                 <form method="POST" action="{{ route('login') }}">
