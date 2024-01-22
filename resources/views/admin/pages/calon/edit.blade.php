@@ -50,12 +50,12 @@
                                         @if($calon->foto_calon)
                                             <div class="mb-2">
                                                 <img src="{{ asset('foto_calon/' . $calon->foto_calon) }}" alt="Current Image" width="100">
-                                                <p class="text-danger">*foto calon wajib diupload ulang jika tidak ada perubahan</p>
+                                                {{-- <p class="text-danger">*foto calon wajib diupload ulang jika tidak ada perubahan</p> --}}
                                             </div>
                                         @endif
 
                                         <!-- Input for uploading a new image -->
-                                        <input class="form-control" type="file" id="formFile" name="foto_calon" accept="image/jpeg, image/jpg" @error('foto_calon') is-invalid @enderror>
+                                        {{-- <input class="form-control" type="file" id="formFile" name="foto_calon" accept="image/jpeg, image/jpg" @error('foto_calon') is-invalid @enderror> --}}
 
                                         @error('foto_calon')
                                             <p class="text-danger">*format gambar harus jpg!</p>

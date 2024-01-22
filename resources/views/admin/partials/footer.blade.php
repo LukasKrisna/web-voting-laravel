@@ -4,7 +4,9 @@
                <p>{{ date('Y') }} &copy; E-Vote OMK</p>
            </div>
            <div class="float-end">
-               <p>Design with <span class="text-danger"><i class="bi bi-heart"></i></span> by <a
+               <p>Design
+                {{-- with <span class="text-danger"><i class="bi bi-heart"></i></span>  --}}
+                by <a
                        href="https://github.com/LukasKrisna">Lukas Krisna</a></p>
            </div>
        </div>

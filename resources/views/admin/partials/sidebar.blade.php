@@ -3,7 +3,7 @@
         <div class="sidebar-header position-relative">
             <div class="d-flex justify-content-between align-items-center">
 
-                <h5 class="mt-auto mb-auto">E-Vote OMK</h5>
+                <a class="mt-auto mb-auto" href="http://127.0.0.1:8000/" style="font-size: 21px;">E-Vote OMK</a>
 
                 <div class="theme-toggle d-flex gap-2  align-items-center ">
                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true"
